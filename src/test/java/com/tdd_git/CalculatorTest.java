@@ -26,10 +26,11 @@ public class CalculatorTest {
 		Assertions.assertThat(Calculator.add("2,5,3")).isEqualTo(10);
 	}
 	
-//	@Test
-//	void additionSplitByCommasAndNewLine() {
-//	}
-//
+	@Test
+	void additionSplitByCommasAndNewLine() {
+		Assertions.assertThat(Calculator.add("2,5,3\n5")).isEqualTo(15);
+	}
+
 //	@Test
 //	void additionForDelimeter() {
 //	}
