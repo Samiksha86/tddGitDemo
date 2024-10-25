@@ -11,10 +11,11 @@ public class CalculatorTest {
 		Assertions.assertThat(Calculator.add("")).isEqualTo(0);
 	}
 	
-//	@Test
-//	void additionForOneInput() {
-//	}
-//	
+	@Test
+	void additionForOneInput() {
+		Assertions.assertThat(Calculator.add("5")).isEqualTo(5);
+	}
+	
 //	@Test
 //	void additionForTwoInput() {
 //	}
