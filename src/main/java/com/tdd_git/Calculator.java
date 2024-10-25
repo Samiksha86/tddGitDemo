@@ -22,23 +22,14 @@ public class Calculator {
 		if(!string.isEmpty()) {
 			List<Integer> list = strArrayToIntList(getSplit(string));
 			
-			negatives(list);
+//			negatives(list);
 			return list.stream().reduce(Integer::sum).orElseThrow();
 		}
 		return 0;
 		
 	}
 
-	private static void negatives(List<Integer> list) {
-        StringBuilder sb = new StringBuilder();
-        list.stream()
-            .filter(num -> num < 0)
-            .forEach(num -> sb.append(num).append(" "));
-
-        if (!sb.toString().isEmpty()) {
-            throw new RuntimeException("Negatives not allowed: " + sb.toString().trim());
-        }
-    }
+	
 	
    private static List<Integer> strArrayToIntList(String[] strArray) {
 		return Arrays.stream(strArray).map(Integer::parseInt).collect(Collectors.toList());
