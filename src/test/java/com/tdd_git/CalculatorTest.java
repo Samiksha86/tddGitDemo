@@ -21,10 +21,11 @@ public class CalculatorTest {
 		Assertions.assertThat(Calculator.add("2,5")).isEqualTo(7);
 	}
 	
-//	@Test
-//	void additionForMultipleInput() {
-//	}
-//	
+	@Test
+	void additionForMultipleInput() {
+		Assertions.assertThat(Calculator.add("2,5,3")).isEqualTo(10);
+	}
+	
 //	@Test
 //	void additionSplitByCommasAndNewLine() {
 //	}
