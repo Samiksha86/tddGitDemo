@@ -8,7 +8,7 @@ public class Calculator {
 
 	public static int add(String string) {
 		if(!string.isEmpty()) {
-			List<Integer> list = Arrays.stream(string.split(",")).map(Integer:: parseInt)
+			List<Integer> list = Arrays.stream(string.split(",|\n")).map(Integer:: parseInt)
 					.collect(Collectors.toList());
 			return list.stream().reduce(Integer::sum).orElseThrow();
 		}
