@@ -31,10 +31,11 @@ public class CalculatorTest {
 		Assertions.assertThat(Calculator.add("2,5,3\n5")).isEqualTo(15);
 	}
 
-//	@Test
-//	void additionForDelimeter() {
-//	}
-//	
+	@Test
+	void additionForDelimeter() {
+		Assertions.assertThat(Calculator.add("//;2;5,3\n5")).isEqualTo(15);
+	}
+	
 //	@Test
 //	void additionForNegative() {
 //	}
