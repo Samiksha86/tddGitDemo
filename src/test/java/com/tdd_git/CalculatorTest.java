@@ -33,12 +33,15 @@ public class CalculatorTest {
 
 	@Test
 	void additionForDelimeter() {
-		Assertions.assertThat(Calculator.add("//;2;5,3\n5")).isEqualTo(15);
+		Assertions.assertThat(Calculator.add("//;2;5;5")).isEqualTo(12);
 	}
 	
-//	@Test
-//	void additionForNegative() {
-//	}
+	@Test
+	void additionForNegative() {
+		Assertions.assertThatThrownBy(() -> Calculator.add("1,-5,4,6,-3"))
+		.hasMessageContaining("Negatives are not allowed")
+		.hasMessageContaining("-5,-3");
+	}
 	
 	
 

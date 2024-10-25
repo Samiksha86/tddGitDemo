@@ -2,6 +2,8 @@ package com.tdd_git;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Calculator {
@@ -25,13 +27,21 @@ public class Calculator {
 		
 	}
 
-   private static List<Integer> strArrayToIntList(Object split) {
-		// TODO Auto-generated method stub
-		return null;
+	
+   private static List<Integer> strArrayToIntList(String[] strArray) {
+		return Arrays.stream(strArray).map(Integer::parseInt).collect(Collectors.toList());
 	}
 
-   private static Object getSplit(String string) {
-	// TODO Auto-generated method stub
-	return null;
-}
+   private static String[] getSplit(String string) {
+	if(string.startsWith("//")) {
+		Matcher matcher = Pattern.compile("//(.)\n(.*);").matcher(string);
+		if(matcher.matches()) {
+			String delimeter = matcher.group(1);
+			String toSplit = matcher.group(2);
+			return toSplit.split(delimeter);
+		}
+	}
+	return string.split(",|\n");
+   }
+   
 }
