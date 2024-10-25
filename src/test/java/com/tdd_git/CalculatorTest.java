@@ -16,10 +16,11 @@ public class CalculatorTest {
 		Assertions.assertThat(Calculator.add("5")).isEqualTo(5);
 	}
 	
-//	@Test
-//	void additionForTwoInput() {
-//	}
-//	
+	@Test
+	void additionForTwoInput() {
+		Assertions.assertThat(Calculator.add("2,5")).isEqualTo(7);
+	}
+	
 //	@Test
 //	void additionForMultipleInput() {
 //	}
